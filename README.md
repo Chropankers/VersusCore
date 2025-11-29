@@ -1,6 +1,6 @@
 # VersusCore
 
-VersusCore is a data-driven 2.5D fighting-game engine implemented in Rust using Bevy.
+VersusCore is a data-driven 2D (Planned 2.5D) fighting-game engine implemented in Rust using Bevy.
 The architecture follows an ECS core with a data & DSL layer on the left and an
 output & debug layer on the right (see `docs/architecture/versuscore-ecs-diagram.png`).
 
