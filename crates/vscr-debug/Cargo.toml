@@ -1,0 +1,12 @@
+[package]
+name = "vscr-debug"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+bevy = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+thiserror = { workspace = true }
+bitflags = { workspace = true }   # only if you’re using Buttons bitflags
+heapless = { workspace = true }   # only if you’re using heapless::Vec

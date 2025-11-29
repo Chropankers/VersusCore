@@ -1,3 +1,5 @@
+use bevy::prelude::*;
+
 #[derive(Component, Reflect, Default)]
 pub struct Velocity {
     pub x: f32,

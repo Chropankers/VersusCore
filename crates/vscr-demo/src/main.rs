@@ -1,5 +1,5 @@
 use bevy::prelude::*;
-use vscr_core::engine::VersusCorePlugin;
+use vscr_core::VersusCorePlugin;
 use vscr_debug::VersusCoreDebugPlugin;
 
 fn main() {
@@ -11,9 +11,9 @@ fn main() {
             }),
             ..Default::default()
         }))
-        .add_plugin(VersusCorePlugin)
-        .add_plugin(VersusCoreDebugPlugin)
-        .add_startup_system(setup_scene)
+        .add_plugins(VersusCorePlugin)
+        .add_plugins(VersusCoreDebugPlugin)
+        .add_systems(Startup, setup_scene)
         .run();
 }
 

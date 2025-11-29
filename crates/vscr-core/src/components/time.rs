@@ -1,3 +1,5 @@
+use bevy::prelude::*;
+
 #[derive(Component, Reflect, Default)]
 pub struct TimeFreeze {
     pub frames_remaining: i16,

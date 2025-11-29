@@ -1,5 +1,7 @@
+use bevy::prelude::*;
+
 bitflags::bitflags! {
-    #[derive(Reflect)]
+    #[derive(Default, PartialEq, Eq, Clone, Copy, Debug)]
     pub struct Buttons: u16 {
         const LEFT  = 0b00000001;
         const RIGHT = 0b00000010;
@@ -13,7 +15,7 @@ bitflags::bitflags! {
     }
 }
 
-#[derive(Component, Reflect, Default)]
+#[derive(Component, Default)]
 pub struct InputBuffer {
     pub current: Buttons,
     pub frames_held: u8,

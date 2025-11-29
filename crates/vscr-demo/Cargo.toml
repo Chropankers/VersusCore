@@ -6,5 +6,4 @@ edition = "2021"
 [dependencies]
 bevy = { workspace = true }
 vscr-core = { path = "../vscr-core" }
-vscr-data = { path = "../vscr-data" }
 vscr-debug = { path = "../vscr-debug" }

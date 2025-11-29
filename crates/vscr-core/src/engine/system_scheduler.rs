@@ -1,13 +1,14 @@
 use bevy::app::App;
+use bevy::prelude::IntoSystemConfigs;
 
 use crate::systems::{
-    input::input_system,
-    collision_hitbox::collision_hitbox_system,
-    state_machine::state_machine_system,
-    movement::movement_system,
-    time_freese::time_freeze_system,
-    resource_meter::resource_meter_system,
-    hit_resolution::hit_resolution_system,
+    input_system,
+    state_machine_system,
+    movement_system,
+    collision_hitbox_system,
+    hit_resolution_system,
+    time_freeze_system,
+    resource_meter_system,
 };
 
 pub fn configure_systems(app: &mut App) {
@@ -16,9 +17,14 @@ pub fn configure_systems(app: &mut App) {
     app.add_systems(
         Update,
         (
-            input_system,
-            collision_hitbox_system,
-            state_machine_system
+            input_system::apply_player_input,
+            state_machine_system::update_character_state,
+            movement_system::apply_movement,
+            collision_hitbox_system::detect_hits,
+            hit_resolution_system::resolve_hits,
+            time_freeze_system::update_time_freeze,
+            resource_meter_system::update_meters,
         )
-    )
+        .chain(),
+    );
 }
