@@ -1,0 +1,21 @@
+[stage]
+texture = "stages/stage.png"
+pos_x = 0.0
+pos_y = -120.0
+scale = 4.0
+
+[[fighters]]
+name = "P1"
+player_id = 1
+texture = "characters/p1.png"
+pos_x = -140.0
+pos_y = 0.0
+scale = 8.0
+
+[[fighters]]
+name = "P2"
+player_id = 2
+texture = "characters/p2.png"
+pos_x = 140.0
+pos_y = 0.0
+scale = 8.0

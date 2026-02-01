@@ -28,6 +28,6 @@ Not just a game, but a framework.
 A foundation.
 A new stage of history.
 
-With VersusCore, you can build something like MUGEN, or you can use it as the backbone of your own original creation. Either way, we all benefit when creativity is unleashed—freed from stagnation, freed from gatekeeping, allowed to run wild across the stage of ages.
+With VersusCore, you can build something like MUGEN, or you can use it as the backbone of your own original creation. Either way, we all benefit when creativity is unleashed; freed from stagnation, freed from gatekeeping, allowed to run wild across the stage of ages.
 
 Engineered to fight for the future, one idea at a time.
