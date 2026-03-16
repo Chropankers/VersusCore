@@ -3,19 +3,190 @@ texture = "stages/stage.png"
 pos_x = 0.0
 pos_y = -120.0
 scale = 4.0
+ground_y = -310.0
 
 [[fighters]]
 name = "P1"
 player_id = 1
-texture = "characters/p1.png"
 pos_x = -140.0
 pos_y = 0.0
-scale = 8.0
+scale = 6.5
+flip_x = false
+movement_speed = 220.0
+shuriken_texture = "characters/p1SHURIKEN.png"
+shuriken_speed = 420.0
+shuriken_lifetime = 1.6
+shuriken_scale = 6.0
+
+[fighters.hitboxes]
+hurtbox_width = 72.0
+hurtbox_height = 120.0
+hurtbox_center_y = 56.0
+projectile_hitbox_radius = 18.0
+
+[fighters.animations.state_map]
+idle = "idle"
+walk = "walk"
+attack = "attack"
+throw = "throw"
+hurt = "hurt"
+jump = "jump"
+
+[fighters.animations.clips.idle]
+texture = "characters/p1IDLE.png"
+frame_width = 96
+frame_height = 96
+columns = 10
+rows = 1
+first = 0
+last = 9
+fps = 10.0
+looping = true
+
+[fighters.animations.clips.walk]
+texture = "characters/p1RUN.png"
+frame_width = 96
+frame_height = 96
+columns = 16
+rows = 1
+first = 0
+last = 15
+fps = 14.0
+looping = true
+
+[fighters.animations.clips.attack]
+texture = "characters/p1ATTACK 1.png"
+frame_width = 96
+frame_height = 96
+columns = 7
+rows = 1
+first = 0
+last = 6
+fps = 14.0
+looping = false
+
+[fighters.animations.clips.throw]
+texture = "characters/p1THROW.png"
+frame_width = 96
+frame_height = 96
+columns = 7
+rows = 1
+first = 0
+last = 6
+fps = 14.0
+looping = false
+
+[fighters.animations.clips.jump]
+texture = "characters/p1JUMP.png"
+frame_width = 96
+frame_height = 96
+columns = 3
+rows = 1
+first = 0
+last = 2
+fps = 10.0
+looping = false
+
+[fighters.animations.clips.hurt]
+texture = "characters/p1HURT.png"
+frame_width = 96
+frame_height = 96
+columns = 4
+rows = 1
+first = 0
+last = 3
+fps = 12.0
+looping = false
 
 [[fighters]]
 name = "P2"
 player_id = 2
-texture = "characters/p2.png"
 pos_x = 140.0
 pos_y = 0.0
-scale = 8.0
+scale = 6.5
+flip_x = true
+movement_speed = 220.0
+shuriken_texture = "characters/p2SHURIKEN.png"
+shuriken_speed = 420.0
+shuriken_lifetime = 1.6
+shuriken_scale = 6.0
+
+[fighters.hitboxes]
+hurtbox_width = 68.0
+hurtbox_height = 110.0
+hurtbox_center_y = 48.0
+projectile_hitbox_radius = 18.0
+
+[fighters.animations.state_map]
+idle = "idle"
+walk = "walk"
+attack = "attack"
+throw = "throw"
+hurt = "hurt"
+jump = "jump"
+
+[fighters.animations.clips.idle]
+texture = "characters/p2IDLE.png"
+frame_width = 96
+frame_height = 64
+columns = 5
+rows = 1
+first = 0
+last = 4
+fps = 10.0
+looping = true
+
+[fighters.animations.clips.walk]
+texture = "characters/p2RUN.png"
+frame_width = 96
+frame_height = 64
+columns = 7
+rows = 1
+first = 0
+last = 6
+fps = 14.0
+looping = true
+
+[fighters.animations.clips.attack]
+texture = "characters/p2ATTACK1.png"
+frame_width = 96
+frame_height = 64
+columns = 5
+rows = 1
+first = 0
+last = 4
+fps = 14.0
+looping = false
+
+[fighters.animations.clips.throw]
+texture = "characters/p2THROW.png"
+frame_width = 96
+frame_height = 64
+columns = 7
+rows = 1
+first = 0
+last = 6
+fps = 14.0
+looping = false
+
+[fighters.animations.clips.jump]
+texture = "characters/p2JUMP.png"
+frame_width = 96
+frame_height = 64
+columns = 3
+rows = 1
+first = 0
+last = 2
+fps = 10.0
+looping = false
+
+[fighters.animations.clips.hurt]
+texture = "characters/p2HURT.png"
+frame_width = 96
+frame_height = 64
+columns = 3
+rows = 1
+first = 0
+last = 2
+fps = 12.0
+looping = false
