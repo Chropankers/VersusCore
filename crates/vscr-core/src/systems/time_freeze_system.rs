@@ -7,7 +7,7 @@ use crate::components::time::{GlobalTimeScale, TimeFreeze};
 pub fn update_time_freeze(
     mut commands: Commands,
     mut query: Query<(Entity, &mut TimeFreeze)>,
-    mut global_scale: Option<ResMut<GlobalTimeScale>>,
+    global_scale: Option<ResMut<GlobalTimeScale>>,
 ) {
     let mut any_frozen = false;
 

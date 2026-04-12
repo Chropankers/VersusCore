@@ -72,3 +72,49 @@ fn aabb_overlaps(min_a: Vec2, max_a: Vec2, min_b: Vec2, max_b: Vec2) -> bool {
         && min_a.y <= max_b.y
         && max_a.y >= min_b.y
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn overlapping_boxes_detected() {
+        let min_a = Vec2::new(0.0, 0.0);
+        let max_a = Vec2::new(10.0, 10.0);
+        let min_b = Vec2::new(5.0, 5.0);
+        let max_b = Vec2::new(15.0, 15.0);
+        assert!(aabb_overlaps(min_a, max_a, min_b, max_b));
+    }
+
+    #[test]
+    fn non_overlapping_boxes_not_detected() {
+        let min_a = Vec2::new(0.0, 0.0);
+        let max_a = Vec2::new(5.0, 5.0);
+        let min_b = Vec2::new(10.0, 0.0);
+        let max_b = Vec2::new(15.0, 5.0);
+        assert!(!aabb_overlaps(min_a, max_a, min_b, max_b));
+    }
+
+    #[test]
+    fn touching_edges_count_as_overlap() {
+        let min_a = Vec2::new(0.0, 0.0);
+        let max_a = Vec2::new(5.0, 5.0);
+        let min_b = Vec2::new(5.0, 0.0);
+        let max_b = Vec2::new(10.0, 5.0);
+        assert!(aabb_overlaps(min_a, max_a, min_b, max_b));
+    }
+
+    #[test]
+    fn world_aabb_applies_offset() {
+        let mut transform = Transform::default();
+        transform.translation = Vec3::new(100.0, 50.0, 0.0);
+        let collider = ColliderAabb {
+            half_extents: Vec2::new(10.0, 20.0),
+            offset: Vec2::new(5.0, 0.0),
+            is_hitbox: false,
+        };
+        let (min, max) = world_aabb(&transform, &collider);
+        assert_eq!(min, Vec2::new(95.0, 30.0));
+        assert_eq!(max, Vec2::new(115.0, 70.0));
+    }
+}

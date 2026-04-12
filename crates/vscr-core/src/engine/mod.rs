@@ -12,7 +12,6 @@ pub fn register_components(app: &mut App) {
         kinematics,
         collider,
         health,
-        input,
         state,
         time,
         resources,
